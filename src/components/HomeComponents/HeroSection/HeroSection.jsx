@@ -1,5 +1,7 @@
 import React from "react";
-import './hero-section.css'
+import { motion } from "framer-motion";
+
+import "./hero-section.css";
 const HeroSection = () => {
   return (
     <>
@@ -10,34 +12,29 @@ const HeroSection = () => {
         >
           <div className="row d-flex flex-column-reverse gap-5 gap-xl-0 flex-xl-row ng-tns-c3-1">
             <div className="col-xl-6 gap-3 d-flex flex-column justify-content-center align-items-xl-start ng-tns-c3-1">
-              <h1
-                className="fw-bold ng-tns-c3-1 ng-trigger ng-trigger-inBottomAnimation"
+              <motion.h1
+                whileInView={{ y: [-100, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.8 }}
+                className="fw-bold"
                 style={{ fontSize: "60px" }}
               >
-                {" "}
-                Incididunt sint aliquip Collection{" "}
-              </h1>
-              <p className="fs-5 ng-tns-c3-1 ng-trigger ng-trigger-inBottomAnimation">
+                Incididunt sint aliquip Collection
+              </motion.h1>
+              
+              <motion.p className="fs-5"  whileInView={{ y: [100, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.8 }}>
                 {" "}
                 Duis reprehenderit labore nulla mollit non consectetur quis aute
                 eu amet sint.{" "}
-              </p>
-              <button
-                className="herosection-btn"
-                
-              >
-                {" "}
-                Join our discord{" "}
-              </button>
+              </motion.p>
+              <motion.button className="herosection-btn"  whileInView={{ y: [100, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.8 }}> Join our discord </motion.button>
               {/**/}
             </div>
-            <div className="col-xl-6 flex justify-content-center ng-tns-c3-1">
-              <img
-                src="/assets/nfts.png"
-                alt=""
-                className="herosection-img"
-              />
-            </div>
+            <motion.div className="col-xl-6 flex justify-content-center ng-tns-c3-1" whileInView={{ x: [100, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.8 }}>
+              <img src="/assets/nfts.png" alt="" className="herosection-img" />
+            </motion.div>
           </div>
         </div>
       </div>

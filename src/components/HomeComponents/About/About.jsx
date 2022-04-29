@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+
 import "./about.css";
 const About = () => {
   return (
@@ -11,10 +13,11 @@ const About = () => {
         >
           <div className="home__about_div">
             <h5 className="home__about_div_h5"> About </h5>
-            <h1 className="home__about_div_h1">
+            <motion.h1 className="home__about_div_h1" whileInView={{ y: [-100, 0], opacity: [0, 1] }}
+                transition={{ duration: 0.8 }}>
               {" "}
               Qui ex nostrud fugiat esse adipisicing aute.{" "}
-            </h1>
+            </motion.h1>
             <p
              className="home__about_div_p"
             >
